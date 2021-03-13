@@ -25,9 +25,10 @@ strong{
 	font-family:Notobold;
 }
 .background{
-	background: url(../img/bg.png);
+    background: url(../img/bg.png);
     background-size: cover;
-	overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     width: 100%;
     margin: 0;
     padding: 0;
