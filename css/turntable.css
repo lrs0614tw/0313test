@@ -30,7 +30,7 @@ strong{
     background-size: cover;
 	overflow: hidden;
     width: 100%;
-	height:calc(270vw);
+	height:calc(275vw);
     margin: 0;
     padding: 0;
 }
@@ -126,4 +126,14 @@ strong{
 	width:750px;
 	height:900px;
 	z-index:20;
+}
+#close{
+	position: relative;
+    height: 166px;
+    width: 140px;
+    background: url(../img/x.png) no-repeat center center;
+    background-size: contain;
+    left: 485px;
+    top: -244px;
+	display:none;
 }
