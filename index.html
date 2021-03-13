@@ -35,9 +35,11 @@
 		</div>
 	</div>
 	<div id="end">	
-		<div id="close"></div>
+		<div id="end_close"></div>
 	</div>
-	
+	<div id="done">	
+		<div id="done_close"></div>
+	</div>
 	<script src="lib/Turntable.min.js"></script>
 	<script>
 		var turnsCount = 6
@@ -55,12 +57,17 @@
 		document.querySelector('.btn').addEventListener('click', buttonOn )
 		document.querySelector('#end').addEventListener('click', function() {
 			document.querySelector('.btn').removeEventListener('click', buttonOn)
-			document.getElementById('close').style.display='block';
-			document.getElementById('end').style.background='url(img/done.png) no-repeat center center';
-			document.getElementById('end').style.height='630px';
-			document.getElementById('end').style.backgroundSize ='contain';
+			document.getElementById('done').style.display='flex';
+			document.getElementById('done_close').style.display='block';
+			document.getElementById('end').style.display='none';
+			document.getElementById('done').style.background='url(img/done.png) no-repeat center center';
+			document.getElementById('done').style.height='630px';
+			document.getElementById('done').style.backgroundSize ='contain';
 		})
-		document.querySelector('#close').addEventListener('click', function() {
+		document.querySelector('#end_close').addEventListener('click', function() {
+			window.close();
+		})
+		document.querySelector('#done_close').addEventListener('click', function() {
 			window.close();
 		})
 		function ajax(status) {
@@ -89,28 +96,44 @@
 						case 0:
 							document.getElementById('end').style.background='url(img/winCan.png) no-repeat center center';
 							document.getElementById('end').style.backgroundSize ='contain';
+							document.getElementById('end_close').style.background='url(img/goWin.png) no-repeat center center';
+							document.getElementById('end_close').style.backgroundSize ='contain';
 							break;
 						case 1:
 							document.getElementById('end').style.background='url(img/lose.png) no-repeat center center';
 							document.getElementById('end').style.backgroundSize ='contain';
+							document.getElementById('end_close').style.background='url(img/goHome.png) no-repeat center center';
+							document.getElementById('end_close').style.backgroundSize ='contain';
+							document.getElementById('end_close').style.top ='315px';
 							break;
 						case 2:
 							document.getElementById('end').style.background='url(img/winFin.png) no-repeat center center';
 							document.getElementById('end').style.backgroundSize ='contain';
+							document.getElementById('end_close').style.background='url(img/goWin.png) no-repeat center center';
+							document.getElementById('end_close').style.backgroundSize ='contain';
 							break;
 						case 3:
 							document.getElementById('end').style.background='url(img/lose.png) no-repeat center center';
 							document.getElementById('end').style.backgroundSize ='contain';
+							document.getElementById('end_close').style.background='url(img/goHome.png) no-repeat center center';
+							document.getElementById('end_close').style.backgroundSize ='contain';
+							document.getElementById('end_close').style.top ='315px';
 							break;
 						case 4:
 							document.getElementById('end').style.background='url(img/winCan.png) no-repeat center center';
-							document.getElementById('end').style.backgroundSize ='contain';							
+							document.getElementById('end').style.backgroundSize ='contain';	
+							document.getElementById('end_close').style.background='url(img/goWin.png) no-repeat center center';	
+							document.getElementById('end_close').style.backgroundSize ='contain';							
 							break;
 						case 5:
 							document.getElementById('end').style.background='url(img/lose.png) no-repeat center center';
 							document.getElementById('end').style.backgroundSize ='contain';
+							document.getElementById('end_close').style.background='url(img/goHome.png) no-repeat center center';
+							document.getElementById('end_close').style.backgroundSize ='contain';
+							document.getElementById('end_close').style.top ='315px';
 							break;
 					}
+					document.getElementById('end_close').style.display='block';
 				})
 			}	
 		}
