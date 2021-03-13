@@ -35,6 +35,7 @@
 		</div>
 	</div>
 	<div id="end">	
+		<div id="close"></div>
 	</div>
 	
 	<script src="lib/Turntable.min.js"></script>
@@ -43,16 +44,24 @@
 		var turntable = new Turntable('#turntable', {
 			turnsCount: turnsCount
 		})
-
-		document.querySelector('.btn').addEventListener('click', function() {
+		function buttonOn()
+		{
 			turntable.run()
 
 			ajax(1).then(function(data) {
 				draw(data)
 			})
-		})
+		}
+		document.querySelector('.btn').addEventListener('click', buttonOn )
 		document.querySelector('#end').addEventListener('click', function() {
-			document.getElementById('end').style.display='none';
+			document.querySelector('.btn').removeEventListener('click', buttonOn)
+			document.getElementById('close').style.display='block';
+			document.getElementById('end').style.background='url(img/done.png) no-repeat center center';
+			document.getElementById('end').style.height='630px';
+			document.getElementById('end').style.backgroundSize ='contain';
+		})
+		document.querySelector('#close').addEventListener('click', function() {
+			window.close();
 		})
 		function ajax(status) {
 			return new Promise(function(resolve, reject) {
