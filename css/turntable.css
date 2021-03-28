@@ -1,29 +1,18 @@
-@font-face {
-  font-family: Notobold;
-  src: url(../font/NotoSansCJKtc-Bold.otf);
-}
-@font-face {
-  font-family: NotoRegular;
-  src: url(../font/NotoSansCJKtc-Regular.otf);
-}
 body{
 	margin:0;
 	padding:0;
 }
 p{
-	font-family:NotoRegular;
 	font-size:2rem;
 }
 font{
 	color:#00863c;
 	font-size:2.2rem;
-	font-family:Notobold;
 	margin-right:30px;
 }
 strong{
 	color:#00863c;
 	font-size:3rem;
-	font-family:Notobold;
 }
 .background{
 	background: url(../img/bg.png);
@@ -99,7 +88,6 @@ strong{
 #price{
 	font-size:3rem;
 	vertical-align: middle;
-	font-family:Notobold;
 	color:#5b4b00;
 }
 .white{
