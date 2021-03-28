@@ -57,7 +57,16 @@
 						var index = Math.floor(Math.random() * turnsCount)
 						if(index==2 || index==5)
 						{
-							index=0
+							var r=Math.random()
+							if(r<0.02 && r>=0.01){
+								index=2
+							}
+							else if(r<0.01 ){
+								index=5
+							}
+							else{
+								index=0
+							}
 						}
 						var name=["超浪二人組","胖子","白總","庫柏姊姊","Kakao兄弟","超帥"]
 						resolve({
